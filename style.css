@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=PT+Sans:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    /* colors */
+    --white-color: #fff;
+    --dark-color: #252525;
+    --primary-color: #3b141c;
+    --secondary-color: #f3961c;
+    --light-pink-color: #faf4f5;
+    --medium-gray-color: #ccc;
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-wight-normal: 400;
+    --font-wight-medium: 500;
+    --font-wight-semibold: 600;
+    --font-wight-bold: 700;
+
+    /* Border radius  */
+    --border-radius-s: 8px;    
+    --border-radius-m: 30px;
+    --border-radius-circle: 50%;
+
+    /* Site max width */
+    --max-width: 1300px;
+}
+
+header {
+    background: var(--primary-color);
+    
+}
