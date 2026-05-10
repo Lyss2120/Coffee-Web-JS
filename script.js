@@ -1,3 +1,4 @@
+const navLinks = document.querySelector(".nav-menu .nav-link");
 const menuOpenButton = document.querySelector("#menu-open-button");
 const menuCloseButton = document.querySelector("#menu-close-button");
 // const navMenu = document.querySelector(".nav-menu");
@@ -9,6 +10,10 @@ menuOpenButton.addEventListener('click', () => {
 menuCloseButton.addEventListener('click', () => {
     menuOpenButton.click()
 })
+
+navLinks.addEventListener('click', () => {
+    navLinks.addEventListener('click', () => menuOpenButton.click())
+}); //abre el link al clickearlo
 
 // slider icianization
 const swiper = new Swiper('.slider-wrapper', {
