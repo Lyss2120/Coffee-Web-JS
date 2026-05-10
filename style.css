@@ -64,6 +64,24 @@ img {
     max-width: var(--site-max-width);
 }
 
+.section-title {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+}
+
+/* linea amarilla bajo el titulo */
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: var(--border-radius-s);
+    background: var(--secondary-color);
+} 
+
 /* Navbar Styling */
 
 header {
@@ -175,6 +193,87 @@ header .navbar {
     margin-right: 30px;
 }
 
+/* About sectin styling */
+
+.about-section {
+    padding: 120px 0;
+    background: var(--light-pink-color);
+}
+
+.about-section .section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-section .about-image-wrapper .about-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius-circle);
+}
+
+.about-section .about-details .section-title {
+    padding: 0;
+}
+
+.about-section .about-details {
+    max-width: 50%;
+}
+
+.about-section .about-details .text {
+    line-height: 30px;
+    margin: 50px 0 30px;
+    text-align: center;
+    font-size: var(--font-size-m);
+}
+
+.about-section .social-link-list {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.about-section .social-link-list .social-link {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    transition: 0.2s ease;
+}
+
+.about-section .social-link-list .social-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Menu section styling */
+
+.menu-section {
+    background: var(--dark-color);
+    color: var(--white-color)
+}
+
+.menu-section .menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 110px;
+    justify-content: space-between;
+}
+.menu-section .menu-list .menu-item {
+    display: flex;
+    align-items:center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% / 3 - 110px);
+
+}
+
+.menu-section .menu-list .menu-item .menu-image {
+    max-width: 83%;
+    aspect-ratio: 1;
+}
+
 /* Responsive media query for max width 900px */
 @media screen {
 
@@ -183,6 +282,17 @@ header .navbar {
         --font-size-xl: 1.5rem;
         --font-size-l: 1.3rem;
         --font-size-m: 1rem;
+    }
+
+    body.show-mobile-menu header::before {
+        content:'';
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background: rgba(0, 0, 0, 0.2);
     }
 
     .navbar :where(#menu-open-button, #menu-close-button) {
@@ -213,6 +323,11 @@ header .navbar {
         align-items: center;
         padding-top: 100px;
         background: var(--white-color);
+        transition: left 0.3s ease;
+    }
+
+    body.show-mobile-menu .nav-menu {
+        left: 0;
     }
 
     .navbar .nav-menu .nav-link {
@@ -221,5 +336,38 @@ header .navbar {
         display: block;
         margin-top: 17px;
     }
+
+    .hero-section .section-content {
+        gap: 50px;
+        text-align: center;
+        padding: 30px 20px 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .hero-section .hero-details :is(.subtitle, .description), .about-section .about-details {
+        max-width: 100%;
+    }
+
+    .hero-section .hero-details .buttons {
+        justify-content: center;
+    }
+
+    .hero-section .hero-image-wrapper {
+        max-width: 270px;
+        margin-right: 0;
+    }
+
+    .about-section .section-content {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+     .about-section .about-image-wrapper .about-image {
+        width: 100%;
+        height: 100%;
+        max-width: 250px;
+        aspect-ratio: 1;
+     }
 
 }
